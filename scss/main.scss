@@ -1,0 +1,308 @@
+/***********************************************************
+                      	  Global
+************************************************************/
+
+@import "_extends.scss";
+
+body {
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+}
+
+
+/***********************************************************
+                      	  Header
+************************************************************/
+
+.nav-section{
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    -webkit-box-shadow: 0 8px 3px -10px black;
+   -moz-box-shadow: 0 8px 3px -10px black;
+    box-shadow: 0 8px 3px -10px #555;
+
+
+    .nav-content {
+        width: 94%;
+        margin: 2em auto 0;
+        position: relative;
+
+        .h1 {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 2em;
+
+            h1 {
+                margin: 0;
+                color: $color-nav-h1;
+                font-size: 1.5em;
+                font-weight: 200;
+                letter-spacing: 1px;
+            }
+        }
+
+        .threeway {
+
+            button {
+                @include background-content('threeway.png', contain);
+                position: absolute;
+                border: none;
+                background-color: initial;
+                width: 1.75em;
+                height: 1.75em;
+                top: 0;
+                padding: 0;
+            }
+        }
+
+        .pages {
+
+            ul {
+                list-style: none;
+                list-style-position: inside;
+                margin: 0;
+                padding-bottom: 2.5em;
+
+                .item {
+                    float: left;
+                    display: inline-block;
+                    list-style-position: inside;
+
+                    &:not(:last-child) {
+                        width: 0px;
+                    }
+
+                    &:first-child {
+                        margin-right: 25%;
+                    }
+
+                    &:nth-child(2) {
+                        margin-left: -0.875em;
+                    }
+
+                    &:nth-child(3) {
+                        margin: 0 25% 0 calc(25% - 0.875em);
+                    }
+
+                    &:nth-child(4) {
+                        margin-left: -0.875em;
+                    }
+
+                    &:last-child {
+                        float: right;
+                        margin-top: 0.5em;
+                    }
+
+                    button {
+                        opacity: 0.4;
+
+                        &:hover {
+                            opacity: 1!important;
+                        }
+
+                        &.favourites {
+                            @include background-content('favourites.png', contain);
+                            border: none;
+                            background-color: initial;
+                            width: 1.75em;
+                            height: 1.75em;
+                            top: 0;
+                            padding: 0;
+                        }
+
+                        &.camera {
+                            @include background-content('camera.png', contain);
+                            border: none;
+                            background-color: initial;
+                            width: 1.75em;
+                            height: 1.75em;
+                            top: 0;
+                            padding: 0;
+                        }
+
+                        &.search {
+                            @include background-content('search.png', contain);
+                            border: none;
+                            background-color: initial;
+                            width: 1.75em;
+                            height: 1.75em;
+                            top: 0;
+                            padding: 0;
+                        }
+
+                        &.lounge {
+                            @include background-content('lounge.png', contain);
+                            border: none;
+                            background-color: initial;
+                            width: 1.75em;
+                            height: 1.75em;
+                            top: 0;
+                            padding: 0;
+                        }
+                    }
+
+                    .topic {
+                        color: $color-topic;
+                        text-decoration: none;
+                        font-weight: 100;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/***********************************************************
+                      	  Content
+************************************************************/
+
+.middle-section {
+    background-color: $color-wrap;
+    padding: 1em 0;
+
+    .wrap {
+        width: 90%;
+        margin: 0 auto;
+
+        .container {
+            background-color: $color-container;
+            border-radius: 5px 5px 0 0;
+            padding-bottom: 1em;
+
+            .picture {
+                width: 100%;
+                height: 17em;
+                background-color: mistyrose;
+                border-radius: 5px 5px 0 0;
+
+                .img {
+
+                }
+            }
+
+            .content {
+                width: 90%;
+                margin: 0 auto;
+
+                .header-content {
+
+                    .profile {
+                        display: inline-block;
+
+                        a {
+                            font-size: 0.9em;
+                            font-weight: 100;
+                            color: $color-profile;
+                            position: relative;
+                            padding: 0.75em 0 0 3em;
+                            display: inline-block;
+                            text-decoration: none;
+                            margin-top: 1em;
+
+                            &::before {
+                                @include background-content('profile.jpg', cover);
+                                border-radius: 100%;
+                                width: 2.5em;
+                                height: 2.5em;
+                                top: 0;
+                                left: 0;
+                                position: absolute;
+                            }
+                        }
+                    }
+
+                    .time-post {
+                        display: inline-block;
+                        float: right;
+                        padding-top: 0.75em;
+
+                        p {
+                            font-size: 0.9em;
+                            font-weight: 100;
+                            color: $color-time;
+                        }
+                    }
+                }
+
+                .section-content {
+
+                    .comment {
+
+                        p {
+                            font-size: 0.9em;
+                            font-weight: 100;
+                            color: $color-comment;
+                            margin: 2em 0;
+                            letter-spacing: 0.5px;
+                            line-height: 1.75em;
+                        }
+                    }
+                }
+
+                .footer-content {
+
+                    .item {
+                        display: inline-block;
+                        float: left;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        font-size: 0.8em;
+                        color: $color-footer-a;
+                        opacity: 0.6;
+                        position: relative;
+                        padding-left: 1.5em;
+
+                        &:hover {
+                            opacity: 1!important;
+                        }
+                    }
+
+                    .likes {
+                        margin-right: 2.5em;
+
+                        a {
+
+                            &:before {
+                                @include background-content('thumbs.png',contain);
+                                width: 1em;
+                                height: 1em;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                            }
+                        }
+                    }
+
+                    .add-comment {
+
+                        a {
+
+                            &:before {
+                                @include background-content('bubble.png',contain);
+                                width: 1em;
+                                height: 1em;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//////////// Clear Fix //////////////
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+//////////// Clear Fix //////////////
