@@ -267,17 +267,123 @@ body {
   clear: both;
   display: table; }
 
-.menu-overlay {
-  background-color: rgba(0, 0, 0, 0.5); }
-  .menu-overlay .pre-page {
-    position: fixed; }
-    .menu-overlay .pre-page .page {
-      transform: scale(0.6);
+.overlay {
+  background-color: rgba(255, 255, 255, 0.65);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: '';
+  z-index: 3; }
+
+.pre-page {
+  position: fixed; }
+  .pre-page .page {
+    transform: scale(0.6);
+    position: relative;
+    top: -28em;
+    right: -10em;
+    box-shadow: 0px 0px 102px 0px #9DC8FC; }
+    .pre-page .page .nav-section {
+      padding-top: 1em; }
+
+.menu {
+  position: relative;
+  z-index: 4;
+  display: none; }
+  .menu .menu-content .cross button {
+    background-image: url("../img/cross.png") !important;
+    background-size: contain;
+    content: '';
+    z-index: 1;
+    position: relative;
+    background-repeat: no-repeat;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: initial;
+    border: initial;
+    margin: 1em 0 0 1em; }
+  .menu .menu-content ul {
+    list-style: none;
+    margin: 4em 0 0 3em; }
+    .menu .menu-content ul .item + .item {
+      margin-top: 1em; }
+    .menu .menu-content ul .item {
+      display: block; }
+      .menu .menu-content ul .item a {
+        text-decoration: none;
+        color: #495484;
+        font-size: 1em;
+        font-weight: 400;
+        opacity: 0.5;
+        padding-left: 3em;
+        display: inline-block;
+        position: relative; }
+        .menu .menu-content ul .item a:hover {
+          opacity: 1; }
+    .menu .menu-content ul .home a::before {
+      background-image: url("../img/home.png") !important;
+      background-size: contain;
+      content: '';
+      z-index: 1;
       position: relative;
-      top: -16em;
-      right: -10em;
-      box-shadow: 0px 0px 102px 0px #9DC8FC; }
-      .menu-overlay .pre-page .page .nav-section {
-        padding-top: 1em; }
+      background-repeat: no-repeat;
+      height: 1em;
+      width: 1em;
+      top: -1px;
+      left: 0;
+      position: absolute; }
+    .menu .menu-content ul .video a::before {
+      background-image: url("../img/video.png") !important;
+      background-size: contain;
+      content: '';
+      z-index: 1;
+      position: relative;
+      background-repeat: no-repeat;
+      height: 1em;
+      width: 1em;
+      top: 0px;
+      left: 0;
+      position: absolute; }
+    .menu .menu-content ul .plaza a::before {
+      background-image: url("../img/plaza.png") !important;
+      background-size: contain;
+      content: '';
+      z-index: 1;
+      position: relative;
+      background-repeat: no-repeat;
+      height: 1em;
+      width: 1em;
+      top: 1px;
+      left: 0;
+      position: absolute; }
+    .menu .menu-content ul .chat a::before {
+      background-image: url("../img/chat.png") !important;
+      background-size: contain;
+      content: '';
+      z-index: 1;
+      position: relative;
+      background-repeat: no-repeat;
+      height: 1em;
+      width: 1em;
+      top: 0px;
+      left: 0;
+      position: absolute; }
+    .menu .menu-content ul .email a::before {
+      background-image: url("../img/email.png") !important;
+      background-size: contain;
+      content: '';
+      z-index: 1;
+      position: relative;
+      background-repeat: no-repeat;
+      height: 1em;
+      width: 1em;
+      top: -1px;
+      left: 0;
+      position: absolute; }
+
+.display {
+  display: block; }
 
 /*# sourceMappingURL=main.css.map */

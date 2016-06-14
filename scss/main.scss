@@ -350,22 +350,158 @@ body {
 
 //////////////Overlay //////////////
 
-.menu-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
+.overlay {
+    background-color: rgba(255, 255, 255, 0.65);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    content: '';
+    z-index: 3;
+}
 
-    .pre-page {
-        position: fixed;
+.pre-page {
+    position: fixed;
 
-        .page {
-            transform: scale(0.6);
-            position: relative;
-            top: -16em;
-            right: -10em;
-            box-shadow: 0px 0px 102px 0px #9DC8FC;
+    .page {
+        transform: scale(0.6);
+        position: relative;
+        top: -28em;
+        right: -10em;
+        box-shadow: 0px 0px 102px 0px #9DC8FC;
 
-            .nav-section {
-                padding-top: 1em;
+        .nav-section {
+            padding-top: 1em;
+
+        }
+    }
+}
+
+.menu {
+    position: relative;
+    z-index: 4;
+    display: none;
+
+    .menu-content {
+
+        .cross {
+
+            button {
+                @include background-content('cross.png', contain);
+                width: 1.5em;
+                height: 1.5em;
+                background-color: initial;
+                border: initial;
+                margin: 1em 0 0 1em;
+            }
+        }
+
+        ul {
+            list-style: none;
+            margin: 4em 0 0 3em;
+
+            .item +.item {
+                margin-top: 1em;
+            }
+
+            .item {
+                display: block;
+
+                a {
+                    text-decoration: none;
+                    color: $color-menu;
+                    font-size: 1em;
+                    font-weight: 400;
+                    opacity: 0.5;
+                    padding-left: 3em;
+                    display: inline-block;
+                    position: relative;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .home {
+
+                a {
+
+                    &::before {
+                        @include background-content('home.png', contain);
+                        height: 1em;
+                        width: 1em;
+                        top: -1px;
+                        left: 0;
+                        position: absolute;
+                    }
+                }
+            }
+
+            .video {
+
+                a {
+
+                    &::before {
+                        @include background-content('video.png', contain);
+                        height: 1em;
+                        width: 1em;
+                        top: 0px;
+                        left: 0;
+                        position: absolute;
+                    }
+                }
+            }
+
+            .plaza {
+
+                a {
+
+                    &::before {
+                        @include background-content('plaza.png', contain);
+                        height: 1em;
+                        width: 1em;
+                        top: 1px;
+                        left: 0;
+                        position: absolute;
+                    }
+                }
+            }
+
+            .chat {
+
+                a {
+
+                    &::before {
+                        @include background-content('chat.png', contain);
+                        height: 1em;
+                        width: 1em;
+                        top: 0px;
+                        left: 0;
+                        position: absolute;
+                    }
+                }
+            }
+
+            .email {
+
+                a {
+
+                    &::before {
+                        @include background-content('email.png', contain);
+                        height: 1em;
+                        width: 1em;
+                        top: -1px;
+                        left: 0;
+                        position: absolute;
+                    }
+                }
             }
         }
     }
+}
+
+.display {
+    display: block;
 }
