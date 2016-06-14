@@ -30,8 +30,9 @@ body {
   box-shadow: 0 8px 4px -11px black; }
   .nav-section .nav-content {
     width: 94%;
-    margin: 2em auto 0;
-    position: relative; }
+    margin: 0 auto;
+    position: relative;
+    padding-top: 2em; }
     .nav-section .nav-content .h1 {
       width: 100%;
       text-align: center;
@@ -54,7 +55,7 @@ body {
       background-color: initial;
       width: 1.75em;
       height: 1.75em;
-      top: 0;
+      top: 2em;
       padding: 0; }
     .nav-section .nav-content .pages ul {
       list-style: none;
@@ -277,16 +278,25 @@ body {
   content: '';
   z-index: 3; }
 
-.pre-page {
+/***********************************************************
+                      	Menu-Overlay
+************************************************************/
+.page {
+  transform: perspective(20em) translate3d(0em, 0em, 0em);
+  transition: all .5s ease;
+  position: relative; }
+
+.pre-page-menu {
   position: fixed; }
-  .pre-page .page {
-    transform: scale(0.6);
+  .pre-page-menu .page {
+    transform: perspective(20em) translate3d(14em, -9em, -7em) !important;
+    transition: all 0.5s ease !important;
     position: relative;
-    top: -28em;
-    right: -10em;
     box-shadow: 0px 0px 102px 0px #9DC8FC; }
-    .pre-page .page .nav-section {
-      padding-top: 1em; }
+
+.page-topic {
+  top: 0;
+  left: 0; }
 
 .menu {
   position: relative;
@@ -306,7 +316,9 @@ body {
     margin: 1em 0 0 1em; }
   .menu .menu-content ul {
     list-style: none;
-    margin: 4em 0 0 3em; }
+    margin: 3em 0 0 3em;
+    width: 50%;
+    float: left; }
     .menu .menu-content ul .item + .item {
       margin-top: 1em; }
     .menu .menu-content ul .item {
@@ -384,6 +396,7 @@ body {
       position: absolute; }
 
 .display {
-  display: block; }
+  display: block;
+  position: absolute; }
 
 /*# sourceMappingURL=main.css.map */
