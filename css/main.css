@@ -25,9 +25,9 @@ body {
   width: 100%;
   position: relative;
   z-index: 2;
-  -webkit-box-shadow: 0 8px 3px -10px black;
-  -moz-box-shadow: 0 8px 3px -10px black;
-  box-shadow: 0 8px 3px -10px #555; }
+  -webkit-box-shadow: 0 8px 4px -11px black;
+  -moz-box-shadow: 0 8px 4px -11px black;
+  box-shadow: 0 8px 4px -11px black; }
   .nav-section .nav-content {
     width: 94%;
     margin: 2em auto 0;
@@ -151,12 +151,18 @@ body {
     .middle-section .wrap .container {
       background-color: #ffffff;
       border-radius: 5px 5px 0 0;
-      padding-bottom: 1em; }
+      padding-bottom: 1em;
+      box-shadow: 0px 0px 10px -6px black;
+      border: 0px solid white;
+      margin-bottom: 1em; }
       .middle-section .wrap .container .picture {
         width: 100%;
         height: 17em;
-        background-color: mistyrose;
         border-radius: 5px 5px 0 0; }
+      .middle-section .wrap .container .picture1 {
+        background-color: mistyrose; }
+      .middle-section .wrap .container .picture2 {
+        background-color: steelblue; }
       .middle-section .wrap .container .content {
         width: 90%;
         margin: 0 auto; }
@@ -171,19 +177,37 @@ body {
             display: inline-block;
             text-decoration: none;
             margin-top: 1em; }
-            .middle-section .wrap .container .content .header-content .profile a::before {
-              background-image: url("../img/profile.jpg") !important;
-              background-size: cover;
-              content: '';
-              z-index: 1;
-              position: relative;
-              background-repeat: no-repeat;
-              border-radius: 100%;
-              width: 2.5em;
-              height: 2.5em;
-              top: 0;
-              left: 0;
-              position: absolute; }
+        .middle-section .wrap .container .content .header-content .profile1 {
+          display: inline-block; }
+          .middle-section .wrap .container .content .header-content .profile1 a::before {
+            background-image: url("../img/profile.jpg") !important;
+            background-size: cover;
+            content: '';
+            z-index: 1;
+            position: relative;
+            background-repeat: no-repeat;
+            border-radius: 100%;
+            width: 2.5em;
+            height: 2.5em;
+            top: 0;
+            left: 0;
+            position: absolute; }
+        .middle-section .wrap .container .content .header-content .profile2 {
+          display: inline-block; }
+          .middle-section .wrap .container .content .header-content .profile2 a::before {
+            background-image: url("../img/profile2.jpg") !important;
+            background-size: cover;
+            content: '';
+            z-index: 1;
+            position: relative;
+            background-repeat: no-repeat;
+            border-radius: 100%;
+            width: 2.5em;
+            height: 2.5em;
+            top: 0;
+            left: 0;
+            position: absolute;
+            background-position: -13px 0; }
         .middle-section .wrap .container .content .header-content .time-post {
           display: inline-block;
           float: right;
@@ -242,5 +266,18 @@ body {
   content: '';
   clear: both;
   display: table; }
+
+.menu-overlay {
+  background-color: rgba(0, 0, 0, 0.5); }
+  .menu-overlay .pre-page {
+    position: fixed; }
+    .menu-overlay .pre-page .page {
+      transform: scale(0.6);
+      position: relative;
+      top: -16em;
+      right: -10em;
+      box-shadow: 0px 0px 102px 0px #9DC8FC; }
+      .menu-overlay .pre-page .page .nav-section {
+        padding-top: 1em; }
 
 /*# sourceMappingURL=main.css.map */
