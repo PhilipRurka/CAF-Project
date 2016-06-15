@@ -184,21 +184,53 @@ body {
             margin-bottom: 1em;
 
             .picture {
-                width: 100%;
-                height: 17em;
                 border-radius: 5px 5px 0 0;
+                width: 100%;
+                height: 90vw;
 
                 .img {
 
                 }
             }
 
-            .picture1 {
-                background-color: mistyrose;
+            .food1 {
+                @include background-content('food1.jpeg', cover, center);
             }
 
-            .picture2 {
-                background-color: steelblue;
+            .food2 {
+                @include background-content('food2.jpeg', cover, center);
+            }
+
+            .drink1 {
+                @include background-content('drink1.jpeg', cover, center);
+            }
+
+            .drink2 {
+                @include background-content('drink2.jpeg', cover, center);
+            }
+
+            .treat1 {
+                @include background-content('treat1.jpeg', cover, center);
+            }
+
+            .treat2 {
+                @include background-content('treat2.jpeg', cover, center);
+            }
+
+            .tool1 {
+                @include background-content('tool1.jpeg', cover, center);
+            }
+
+            .tool2 {
+                @include background-content('tool2.jpg', cover, center);
+            }
+
+            .room1 {
+                @include background-content('room1.jpeg', cover, center);
+            }
+
+            .room2 {
+                @include background-content('room2.jpeg', cover, center);
             }
 
             .content {
@@ -383,18 +415,88 @@ body {
     }
 }
 
-.page-menu {
+.pre-page-topic {
+    position: fixed;
 
+    .page {
+        transform: perspective(20em) translate3d(-14em, -9em, -7em)!important;
+        transition: all .5s ease!important;
+        position: relative;
+        box-shadow: 0px 0px 102px 0px #9DC8FC;
+    }
 }
 
-.page-topic {
-    top: 0;
-    left: 0;
-}
+.topic-list {
+    position: absolute;
+    z-index: 4;
+    display: none;
+    right: 0;
 
+    .topic-content {
+
+        .cross {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+
+            button {
+                @include background-content('cross.png', contain);
+                width: 1.5em;
+                height: 1.5em;
+                background-color: initial;
+                border: initial;
+                margin: 1em 1em 0 0;
+                right: 0;
+                float: right;
+            }
+        }
+
+        .topic-container {
+            margin-right: 5em;
+            text-align: right;
+
+             h2 {
+                 margin: 0;
+                 font-size: 1.5em;
+                 font-weight: 400;
+                 display: inline-block;
+                 margin-top: 3.5em;
+                 color: $color-topic-list;
+             }
+
+             ul {
+                 list-style: none;
+                 text-align: right;
+
+                 .item + .item {
+                     margin-top: 1em;
+                 }
+
+                 .item {
+                     display: block;
+
+                     a {
+                         display: inline-block;
+                         text-decoration: none;
+                         color: $color-topic-list;
+                         font-size: 1em;
+                         font-weight: 400;
+                         opacity: 0.5;
+                         display: inline-block;
+
+                         &:hover {
+                             opacity: 1;
+                         }
+                    }
+                }
+            }
+        }
+    }
+}
 
 .menu {
-    position: relative;
+    position: absolute;
     z-index: 4;
     display: none;
 
@@ -418,7 +520,7 @@ body {
             width: 50%;
             float: left;
 
-            .item +.item {
+            .item + .item {
                 margin-top: 1em;
             }
 
@@ -522,4 +624,8 @@ body {
 .display {
     display: block;
     position: absolute;
+}
+
+.selected {
+    opacity: 1!important;
 }

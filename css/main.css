@@ -157,13 +157,89 @@ body {
       border: 0px solid white;
       margin-bottom: 1em; }
       .middle-section .wrap .container .picture {
+        border-radius: 5px 5px 0 0;
         width: 100%;
-        height: 17em;
-        border-radius: 5px 5px 0 0; }
-      .middle-section .wrap .container .picture1 {
-        background-color: mistyrose; }
-      .middle-section .wrap .container .picture2 {
-        background-color: steelblue; }
+        height: 90vw; }
+      .middle-section .wrap .container .food1 {
+        background-image: url("../img/food1.jpeg") !important;
+        background-size: cover;
+        background-position: center;
+        content: '';
+        z-index: 1;
+        position: relative;
+        background-repeat: no-repeat; }
+      .middle-section .wrap .container .food2 {
+        background-image: url("../img/food2.jpeg") !important;
+        background-size: cover;
+        background-position: center;
+        content: '';
+        z-index: 1;
+        position: relative;
+        background-repeat: no-repeat; }
+      .middle-section .wrap .container .drink1 {
+        background-image: url("../img/drink1.jpeg") !important;
+        background-size: cover;
+        background-position: center;
+        content: '';
+        z-index: 1;
+        position: relative;
+        background-repeat: no-repeat; }
+      .middle-section .wrap .container .drink2 {
+        background-image: url("../img/drink2.jpeg") !important;
+        background-size: cover;
+        background-position: center;
+        content: '';
+        z-index: 1;
+        position: relative;
+        background-repeat: no-repeat; }
+      .middle-section .wrap .container .treat1 {
+        background-image: url("../img/treat1.jpeg") !important;
+        background-size: cover;
+        background-position: center;
+        content: '';
+        z-index: 1;
+        position: relative;
+        background-repeat: no-repeat; }
+      .middle-section .wrap .container .treat2 {
+        background-image: url("../img/treat2.jpeg") !important;
+        background-size: cover;
+        background-position: center;
+        content: '';
+        z-index: 1;
+        position: relative;
+        background-repeat: no-repeat; }
+      .middle-section .wrap .container .tool1 {
+        background-image: url("../img/tool1.jpeg") !important;
+        background-size: cover;
+        background-position: center;
+        content: '';
+        z-index: 1;
+        position: relative;
+        background-repeat: no-repeat; }
+      .middle-section .wrap .container .tool2 {
+        background-image: url("../img/tool2.jpg") !important;
+        background-size: cover;
+        background-position: center;
+        content: '';
+        z-index: 1;
+        position: relative;
+        background-repeat: no-repeat; }
+      .middle-section .wrap .container .room1 {
+        background-image: url("../img/room1.jpeg") !important;
+        background-size: cover;
+        background-position: center;
+        content: '';
+        z-index: 1;
+        position: relative;
+        background-repeat: no-repeat; }
+      .middle-section .wrap .container .room2 {
+        background-image: url("../img/room2.jpeg") !important;
+        background-size: cover;
+        background-position: center;
+        content: '';
+        z-index: 1;
+        position: relative;
+        background-repeat: no-repeat; }
       .middle-section .wrap .container .content {
         width: 90%;
         margin: 0 auto; }
@@ -294,12 +370,67 @@ body {
     position: relative;
     box-shadow: 0px 0px 102px 0px #9DC8FC; }
 
-.page-topic {
-  top: 0;
-  left: 0; }
+.pre-page-topic {
+  position: fixed; }
+  .pre-page-topic .page {
+    transform: perspective(20em) translate3d(-14em, -9em, -7em) !important;
+    transition: all 0.5s ease !important;
+    position: relative;
+    box-shadow: 0px 0px 102px 0px #9DC8FC; }
+
+.topic-list {
+  position: absolute;
+  z-index: 4;
+  display: none;
+  right: 0; }
+  .topic-list .topic-content .cross {
+    width: 100%;
+    height: 100%;
+    position: relative; }
+    .topic-list .topic-content .cross button {
+      background-image: url("../img/cross.png") !important;
+      background-size: contain;
+      content: '';
+      z-index: 1;
+      position: relative;
+      background-repeat: no-repeat;
+      width: 1.5em;
+      height: 1.5em;
+      background-color: initial;
+      border: initial;
+      margin: 1em 1em 0 0;
+      right: 0;
+      float: right; }
+  .topic-list .topic-content .topic-container {
+    margin-right: 5em;
+    text-align: right; }
+    .topic-list .topic-content .topic-container h2 {
+      margin: 0;
+      font-size: 1.5em;
+      font-weight: 400;
+      display: inline-block;
+      margin-top: 3.5em;
+      color: #495484; }
+    .topic-list .topic-content .topic-container ul {
+      list-style: none;
+      text-align: right; }
+      .topic-list .topic-content .topic-container ul .item + .item {
+        margin-top: 1em; }
+      .topic-list .topic-content .topic-container ul .item {
+        display: block; }
+        .topic-list .topic-content .topic-container ul .item a {
+          display: inline-block;
+          text-decoration: none;
+          color: #495484;
+          font-size: 1em;
+          font-weight: 400;
+          opacity: 0.5;
+          display: inline-block; }
+          .topic-list .topic-content .topic-container ul .item a:hover {
+            opacity: 1; }
 
 .menu {
-  position: relative;
+  position: absolute;
   z-index: 4;
   display: none; }
   .menu .menu-content .cross button {
@@ -398,5 +529,8 @@ body {
 .display {
   display: block;
   position: absolute; }
+
+.selected {
+  opacity: 1 !important; }
 
 /*# sourceMappingURL=main.css.map */
