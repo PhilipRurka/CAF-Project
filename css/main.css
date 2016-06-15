@@ -17,6 +17,12 @@ body {
   box-sizing: border-box;
   width: 100%;
   position: relative; }
+  body .global {
+    width: 100%;
+    height: 100%; }
+    body .global .wrapper {
+      max-width: 800px;
+      margin: 0 auto; }
 
 /***********************************************************
                       	  Header
@@ -32,7 +38,8 @@ body {
     width: 94%;
     margin: 0 auto;
     position: relative;
-    padding-top: 2em; }
+    padding-top: 2em;
+    max-width: 800px; }
     .nav-section .nav-content .h1 {
       width: 100%;
       text-align: center;
@@ -138,7 +145,8 @@ body {
         .nav-section .nav-content .pages ul .item .topic {
           color: #9DC8FC;
           text-decoration: none;
-          font-weight: 100; }
+          font-weight: 500;
+          font-size: 1.5em; }
 
 /***********************************************************
                       	  Content
@@ -146,6 +154,12 @@ body {
 .middle-section {
   background-color: #F6F8FC;
   padding: 1em 0; }
+  @media screen and (min-width: 400px) {
+    .middle-section {
+      padding: 2em 0; } }
+  @media screen and (min-width: 800px) {
+    .middle-section {
+      padding: 4em 0; } }
   .middle-section .wrap {
     width: 90%;
     margin: 0 auto; }
@@ -155,11 +169,18 @@ body {
       padding-bottom: 1em;
       box-shadow: 0px 0px 10px -6px black;
       border: 0px solid white;
-      margin-bottom: 1em; }
+      margin: 0 auto 1em; }
+      @media screen and (min-width: 400px) {
+        .middle-section .wrap .container {
+          margin-bottom: 2em; } }
+      @media screen and (min-width: 800px) {
+        .middle-section .wrap .container {
+          margin-bottom: 4em; } }
       .middle-section .wrap .container .picture {
         border-radius: 5px 5px 0 0;
         width: 100%;
-        height: 90vw; }
+        height: 90vw;
+        max-height: 720px; }
       .middle-section .wrap .container .food1 {
         background-image: url("../img/food1.jpeg") !important;
         background-size: cover;
@@ -363,26 +384,28 @@ body {
   position: relative; }
 
 .pre-page-menu {
-  position: fixed; }
+  position: fixed;
+  max-width: 800px; }
   .pre-page-menu .page {
-    transform: perspective(20em) translate3d(14em, -9em, -7em) !important;
+    transform: perspective(20em) translate3d(14em, -9em, -7em);
     transition: all 0.5s ease !important;
     position: relative;
     box-shadow: 0px 0px 102px 0px #9DC8FC; }
 
 .pre-page-topic {
-  position: fixed; }
+  position: fixed;
+  max-width: 800px; }
   .pre-page-topic .page {
-    transform: perspective(20em) translate3d(-14em, -9em, -7em) !important;
+    transform: perspective(20em) translate3d(-14em, -9em, -7em);
     transition: all 0.5s ease !important;
     position: relative;
     box-shadow: 0px 0px 102px 0px #9DC8FC; }
 
 .topic-list {
-  position: absolute;
+  position: relative;
   z-index: 4;
   display: none;
-  right: 0; }
+  float: right; }
   .topic-list .topic-content .cross {
     width: 100%;
     height: 100%;
@@ -433,18 +456,22 @@ body {
   position: absolute;
   z-index: 4;
   display: none; }
-  .menu .menu-content .cross button {
-    background-image: url("../img/cross.png") !important;
-    background-size: contain;
-    content: '';
-    z-index: 1;
-    position: relative;
-    background-repeat: no-repeat;
-    width: 1.5em;
-    height: 1.5em;
-    background-color: initial;
-    border: initial;
-    margin: 1em 0 0 1em; }
+  .menu .menu-content .cross {
+    width: 100%;
+    height: 100%;
+    position: relative; }
+    .menu .menu-content .cross button {
+      background-image: url("../img/cross.png") !important;
+      background-size: contain;
+      content: '';
+      z-index: 1;
+      position: relative;
+      background-repeat: no-repeat;
+      width: 1.5em;
+      height: 1.5em;
+      background-color: initial;
+      border: initial;
+      margin: 1em 0 0 1em; }
   .menu .menu-content ul {
     list-style: none;
     margin: 3em 0 0 3em;
