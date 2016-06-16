@@ -2,9 +2,9 @@
                          	Var
 ************************************************************/
 
-var file-local = "file:///Users/philiprurka/Documents/Dev/Sub-Projects/CAF/CAF-Project/pages/";
+var file_local = "file:///Users/philiprurka/Documents/Dev/Sub-Projects/CAF/CAF-Project/pages/";
 
-var file-gh = "http://philiprurka.github.io/CAF-Project/pages/";
+var file_gh = "http://philiprurka.github.io/CAF-Project/pages/";
 
 
 
@@ -86,8 +86,8 @@ $('.topic-navigation .food').click(function(event) {
         $('#page-wrap').removeClass('page-wrap-topic');
     }, 500);
     setTimeout(function () {
-        window.location.href = file-local + "food.html";
-        window.location.href = file-gh + "food.html";
+        window.location.href = file_local + "food.html";
+        window.location.href = file_gh + "food.html";
     },1000);
     });
 
@@ -99,8 +99,8 @@ $('.topic-navigation .drink').click(function(event) {
         $('#page-wrap').removeClass('page-wrap-topic');
     }, 500);
     setTimeout(function () {
-        window.location.href = file-local + "drink.html"
-        window.location.href = file-lgh+ "drink.html";;
+        window.location.href = file_local + "drink.html"
+        window.location.href = file_lgh+ "drink.html";;
     },1000);
 });
 
@@ -112,8 +112,8 @@ $('.topic-navigation .treats').click(function(event) {
         $('#page-wrap').removeClass('page-wrap-topic');
     }, 500);
     setTimeout(function () {
-        window.location.href = file-local + "treat.html"
-        window.location.href = file-lgh+ "treat.html";;
+        window.location.href = file_local + "treat.html"
+        window.location.href = file_lgh+ "treat.html";;
     },1000);
 });
 
@@ -125,8 +125,8 @@ $('.topic-navigation .tools').click(function(event) {
         $('#page-wrap').removeClass('page-wrap-topic');
     }, 500);
     setTimeout(function () {
-        window.location.href = file-local + "tool.html";
-        window.location.href = file-gh + "tool.html";
+        window.location.href = file_local + "tool.html";
+        window.location.href = file_gh + "tool.html";
     },1000);
 });
 
@@ -138,8 +138,8 @@ $('.topic-navigation .room').click(function(event) {
         $('#page-wrap').removeClass('page-wrap-topic');
     }, 500);
     setTimeout(function () {
-        window.location.href = file-local + "room.html";
-        window.location.href = file-gh + "room.html";
+        window.location.href = file_local + "room.html";
+        window.location.href = file_gh + "room.html";
     },1000);
 });
 
