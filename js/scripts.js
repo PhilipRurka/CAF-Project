@@ -2,7 +2,9 @@
                          	Var
 ************************************************************/
 
-var file = "file:///Users/philiprurka/Documents/Dev/Sub-Projects/CAF/CAF-Project/pages/";
+var file-local = "file-local:///Users/philiprurka/Documents/Dev/Sub-Projects/CAF/CAF-Project/pages/";
+
+var file-gh = "http://philiprurka.github.io/CAF-Project/pages/"
 
 
 
@@ -84,7 +86,8 @@ $('.topic-navigation .food').click(function(event) {
         $('#page-wrap').removeClass('page-wrap-topic');
     }, 500);
     setTimeout(function () {
-        window.location.href = file + "food.html";
+        window.location.href = file-local + "food.html";
+        window.location.href = file-gh + "food.html";
     },1000);
     });
 
@@ -96,7 +99,8 @@ $('.topic-navigation .drink').click(function(event) {
         $('#page-wrap').removeClass('page-wrap-topic');
     }, 500);
     setTimeout(function () {
-        window.location.href = file + "drink.html";
+        window.location.href = file-local + "drink.html"
+        window.location.href = file-lgh+ "drink.html";;
     },1000);
 });
 
@@ -108,7 +112,8 @@ $('.topic-navigation .treats').click(function(event) {
         $('#page-wrap').removeClass('page-wrap-topic');
     }, 500);
     setTimeout(function () {
-        window.location.href = file + "treat.html";
+        window.location.href = file-local + "treat.html"
+        window.location.href = file-lgh+ "treat.html";;
     },1000);
 });
 
@@ -120,7 +125,8 @@ $('.topic-navigation .tools').click(function(event) {
         $('#page-wrap').removeClass('page-wrap-topic');
     }, 500);
     setTimeout(function () {
-        window.location.href = file + "tool.html";
+        window.location.href = file-local + "tool.html";
+        window.location.href = file-gh + "tool.html";
     },1000);
 });
 
@@ -132,7 +138,8 @@ $('.topic-navigation .room').click(function(event) {
         $('#page-wrap').removeClass('page-wrap-topic');
     }, 500);
     setTimeout(function () {
-        window.location.href = file + "room.html";
+        window.location.href = file-local + "room.html";
+        window.location.href = file-gh + "room.html";
     },1000);
 });
 
