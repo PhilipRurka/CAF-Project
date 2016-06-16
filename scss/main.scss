@@ -2,6 +2,7 @@
                       	  Global
 ************************************************************/
 
+
 @import "_extends.scss";
 
 body {
@@ -16,11 +17,13 @@ body {
         .wrapper {
             max-width: 800px;
             margin: 0 auto;
-
-            .page {
-            }
         }
     }
+}
+
+.page-content {
+    @include page-shrink(0, 0, 0);
+    box-shadow: none;
 }
 
 
@@ -45,35 +48,55 @@ body {
         padding-top: 2em;
         max-width: 800px;
 
-        .h1 {
+        .site-title {
             width: 100%;
             text-align: center;
             margin-bottom: 2em;
 
             h1 {
+                @include text(1.5em, $color-nav-h1, 200, 1px);
                 margin: 0;
-                color: $color-nav-h1;
-                font-size: 1.5em;
-                font-weight: 200;
-                letter-spacing: 1px;
             }
         }
 
         .threeway {
 
             button {
-                @include background-content('threeway.png', contain);
-                position: absolute;
-                border: none;
-                background-color: initial;
-                width: 1.75em;
-                height: 1.75em;
-                top: 2em;
-                padding: 0;
+                @include background-content('overlay/threeway.png', contain);
+                @include bg-dimention-position(1.75em, 1.75em, absolute, 2em);
+                @extend %buttonless;
             }
         }
 
-        .pages {
+        .current-topic {
+
+            button {
+                @include bg-dimention-position(1.75em, 1.75em, absolute, 2em, 0);
+                @extend %buttonless;
+
+                &.food-selected {
+                    @include background-content('topic-icon/food-selected.png',contain);
+                }
+
+                &.drink-selected {
+                    @include background-content('topic-icon/drink-selected.png',contain);
+                }
+
+                &.treat-selected {
+                    @include background-content('topic-icon/treat-selected.png',contain);
+                }
+
+                &.tool-selected {
+                    @include background-content('topic-icon/tool-selected.png',contain);
+                }
+
+                &.room-selected {
+                    @include background-content('topic-icon/room-selected.png',contain);
+                }
+            }
+        }
+
+        .page-navigation {
 
             ul {
                 list-style: none;
@@ -90,28 +113,21 @@ body {
                         width: 0px;
                     }
 
-                    &:first-child {
-                        margin-right: 25%;
+                    &:nth-child(1) {
+                        margin-right: 0.3333em;
                     }
 
                     &:nth-child(2) {
-                        margin-left: -0.875em;
+                        margin: 0 calc(16.6665% + 0.3333em) 0 calc(33.3332% - 0.875em);
                     }
 
                     &:nth-child(3) {
-                        margin: 0 25% 0 calc(25% - 0.875em);
-                    }
-
-                    &:nth-child(4) {
-                        margin-left: -0.875em;
-                    }
-
-                    &:last-child {
-                        float: right;
-                        margin-top: 0.5em;
+                        margin: 0 calc(33.3332% - 1em + 0.3333em) 0 calc(16.6665% - 0.875em);
                     }
 
                     button {
+                        @include bg-dimention-position(1.75em, 1.75em, relative, 0);
+                        @extend %buttonless;
                         opacity: 0.4;
 
                         &:hover {
@@ -119,51 +135,20 @@ body {
                         }
 
                         &.favourites {
-                            @include background-content('favourites.png', contain);
-                            border: none;
-                            background-color: initial;
-                            width: 1.75em;
-                            height: 1.75em;
-                            top: 0;
-                            padding: 0;
+                            @include background-content('navigation-icon/favourites.png', contain);
                         }
 
                         &.camera {
-                            @include background-content('camera.png', contain);
-                            border: none;
-                            background-color: initial;
-                            width: 1.75em;
-                            height: 1.75em;
-                            top: 0;
-                            padding: 0;
+                            @include background-content('navigation-icon/camera.png', contain);
                         }
 
                         &.search {
-                            @include background-content('search.png', contain);
-                            border: none;
-                            background-color: initial;
-                            width: 1.75em;
-                            height: 1.75em;
-                            top: 0;
-                            padding: 0;
+                            @include background-content('navigation-icon/search.png', contain);
                         }
 
                         &.lounge {
-                            @include background-content('lounge.png', contain);
-                            border: none;
-                            background-color: initial;
-                            width: 1.75em;
-                            height: 1.75em;
-                            top: 0;
-                            padding: 0;
+                            @include background-content('navigation-icon/lounge.png', contain);
                         }
-                    }
-
-                    .topic {
-                        color: $color-topic;
-                        text-decoration: none;
-                        font-weight: 500;
-                        font-size: 1.5em;
                     }
                 }
             }
@@ -176,7 +161,7 @@ body {
                       	  Content
 ************************************************************/
 
-.middle-section {
+.content-section {
     background-color: $color-wrap;
     padding: 1em 0;
 
@@ -209,139 +194,115 @@ body {
             }
 
             .picture {
+                @include bg-dimention-position(100%, 90vw, relative);
                 border-radius: 5px 5px 0 0;
-                width: 100%;
-                height: 90vw;
                 max-height: 720px;
 
-                .img {
-
+                &.food1 {
+                    @include background-content('post-image/food1.jpeg', cover, center);
                 }
-            }
 
-            .food1 {
-                @include background-content('food1.jpeg', cover, center);
-            }
+                &.food2 {
+                    @include background-content('post-image/food2.jpeg', cover, center);
+                }
 
-            .food2 {
-                @include background-content('food2.jpeg', cover, center);
-            }
+                &.drink1 {
+                    @include background-content('post-image/drink1.jpeg', cover, center);
+                }
 
-            .drink1 {
-                @include background-content('drink1.jpeg', cover, center);
-            }
+                &.drink2 {
+                    @include background-content('post-image/drink2.jpeg', cover, center);
+                }
 
-            .drink2 {
-                @include background-content('drink2.jpeg', cover, center);
-            }
+                &.treat1 {
+                    @include background-content('post-image/treat1.jpeg', cover, center);
+                }
 
-            .treat1 {
-                @include background-content('treat1.jpeg', cover, center);
-            }
+                &.treat2 {
+                    @include background-content('post-image/treat2.jpeg', cover, center);
+                }
 
-            .treat2 {
-                @include background-content('treat2.jpeg', cover, center);
-            }
+                &.tool1 {
+                    @include background-content('post-image/tool1.jpeg', cover, center);
+                }
 
-            .tool1 {
-                @include background-content('tool1.jpeg', cover, center);
-            }
+                &.tool2 {
+                    @include background-content('post-image/tool2.jpg', cover, center);
+                }
 
-            .tool2 {
-                @include background-content('tool2.jpg', cover, center);
-            }
+                &.room1 {
+                    @include background-content('post-image/room1.jpeg', cover, center);
+                }
 
-            .room1 {
-                @include background-content('room1.jpeg', cover, center);
-            }
-
-            .room2 {
-                @include background-content('room2.jpeg', cover, center);
+                &.room2 {
+                    @include background-content('post-image/room2.jpeg', cover, center);
+                }
             }
 
             .content {
                 width: 90%;
                 margin: 0 auto;
 
-                .header-content {
+                .post-header {
 
-                    .profile {
+                    .post-author {
                         display: inline-block;
 
-                        a {
-                            font-size: 0.9em;
-                            font-weight: 100;
-                            color: $color-profile;
-                            position: relative;
-                            padding: 0.75em 0 0 3em;
-                            display: inline-block;
+                        .link-to-profile-page {
                             text-decoration: none;
-                            margin-top: 1em;
-                        }
-                    }
+                            position: relative;
+                            top: -0.58em;
 
-                    .profile1 {
-                        display: inline-block;
+                            .author-name {
+                                @include text(0.9em, $color-author-name, 100);
+                                display: inline-block;
+                                margin: 0;
+                                padding-left: 0.25em;
+                            }
 
-                        a {
-                            &::before {
-                                @include background-content('profile.jpg', cover);
-                                border-radius: 100%;
-                                width: 2.5em;
-                                height: 2.5em;
-                                top: 0;
-                                left: 0;
-                                position: absolute;
+                            .author-avatar {
+                                display: inline-block;
+                                height: 3em;
+                                width: 3em;
+                                border-radius: 50%;
+                                object-fit: cover;
+                                position: relative;
+                                top: 1.2em;
+
+                                &.author-avatar-1 {
+
+                                }
+
+                                &.author-avatar-2 {
+                                    object-position: -17px 0px;
+                                }
                             }
                         }
                     }
 
-                    .profile2 {
-                        display: inline-block;
-
-                        a {
-                            &::before {
-                                @include background-content('profile2.jpg', cover);
-                                border-radius: 100%;
-                                width: 2.5em;
-                                height: 2.5em;
-                                top: 0;
-                                left: 0;
-                                position: absolute;
-                                background-position: -13px 0;
-                            }
-                        }
-                    }
-
-                    .time-post {
+                    .post-timestamp {
                         display: inline-block;
                         float: right;
                         padding-top: 0.75em;
 
                         p {
-                            font-size: 0.9em;
-                            font-weight: 100;
-                            color: $color-time;
+                            @include text(0.9em, $color-time, 100);
                         }
                     }
                 }
 
-                .section-content {
+                .post-comment {
 
                     .comment {
 
                         p {
-                            font-size: 0.9em;
-                            font-weight: 100;
-                            color: $color-comment;
+                            @include text(0.9em, $color-comment, 100, 0.5px, 1.75em);
                             margin: 2em 0;
-                            letter-spacing: 0.5px;
-                            line-height: 1.75em;
                         }
                     }
                 }
 
-                .footer-content {
+                .post-footer {
 
                     .item {
                         display: inline-block;
@@ -349,9 +310,8 @@ body {
                     }
 
                     a {
+                        @include text(0.9em, $color-footer-a);
                         text-decoration: none;
-                        font-size: 0.8em;
-                        color: $color-footer-a;
                         opacity: 0.6;
                         position: relative;
                         padding-left: 1.5em;
@@ -361,33 +321,25 @@ body {
                         }
                     }
 
-                    .likes {
+                    .post-likes {
                         margin-right: 2.5em;
 
                         a {
 
                             &:before {
-                                @include background-content('thumbs.png',contain);
-                                width: 1em;
-                                height: 1em;
-                                position: absolute;
-                                top: 0;
-                                left: 0;
+                                @include background-content('post-footer/thumbs.png',contain);
+                                @include bg-dimention-position(0.9em, 0.9em, absolute, 0, $left: 0);
                             }
                         }
                     }
 
-                    .add-comment {
+                    .post-comments {
 
                         a {
 
                             &:before {
-                                @include background-content('bubble.png',contain);
-                                width: 1em;
-                                height: 1em;
-                                position: absolute;
-                                top: 0;
-                                left: 0;
+                                @include background-content('post-footer/bubble.png',contain);
+                                @include bg-dimention-position(0.9em, 0.9em, absolute, 0, $left: 0);
                             }
                         }
                     }
@@ -407,7 +359,11 @@ body {
 //////////// Clear Fix //////////////
 
 
-//////////////Overlay //////////////
+
+/***********************************************************
+                      	 Overlay
+************************************************************/
+
 
 .overlay {
     background-color: rgba(255, 255, 255, 0.65);
@@ -420,115 +376,18 @@ body {
     z-index: 3;
 }
 
-/***********************************************************
-                      	Menu-Overlay
-************************************************************/
 
-.page {
-    transform: perspective(20em) translate3d(0em, 0em, 0em);
-    transition: all .5s ease;
-    position: relative;
-}
-
-.pre-page-menu {
-    position: fixed;
-    max-width: 800px;
-
-    .page {
-        transform: perspective(20em) translate3d(14em, -9em, -7em);
-        transition: all .5s ease!important;
-        position: relative;
-        box-shadow: 0px 0px 102px 0px #9DC8FC;
-    }
-}
-
-.pre-page-topic {
-    position: fixed;
-    max-width: 800px;
-
-    .page {
-        transform: perspective(20em) translate3d(-14em, -9em, -7em);
-        transition: all .5s ease!important;
-        position: relative;
-        box-shadow: 0px 0px 102px 0px #9DC8FC;
-    }
-}
-
-.topic-list {
-    position: relative;
-    z-index: 4;
-    display: none;
-    float: right;;
-
-    .topic-content {
-
-        .cross {
-            width: 100%;
-            height: 100%;
-            position: relative;
+/****************************
+	    Menu-Overlay
+****************************/
 
 
-            button {
-                @include background-content('cross.png', contain);
-                width: 1.5em;
-                height: 1.5em;
-                background-color: initial;
-                border: initial;
-                margin: 1em 1em 0 0;
-                right: 0;
-                float: right;
-            }
-        }
-
-        .topic-container {
-            margin-right: 5em;
-            text-align: right;
-
-             h2 {
-                 margin: 0;
-                 font-size: 1.5em;
-                 font-weight: 400;
-                 display: inline-block;
-                 margin-top: 3.5em;
-                 color: $color-topic-list;
-             }
-
-             ul {
-                 list-style: none;
-                 text-align: right;
-
-                 .item + .item {
-                     margin-top: 1em;
-                 }
-
-                 .item {
-                     display: block;
-
-                     a {
-                         display: inline-block;
-                         text-decoration: none;
-                         color: $color-topic-list;
-                         font-size: 1em;
-                         font-weight: 400;
-                         opacity: 0.5;
-                         display: inline-block;
-
-                         &:hover {
-                             opacity: 1;
-                         }
-                    }
-                }
-            }
-        }
-    }
-}
-
-.menu {
+.site-navigation {
     position: absolute;
     z-index: 4;
     display: none;
 
-    .menu-content {
+    .site-menu {
 
         .cross {
             width: 100%;
@@ -536,11 +395,9 @@ body {
             position: relative;
 
             button {
-                @include background-content('cross.png', contain);
-                width: 1.5em;
-                height: 1.5em;
-                background-color: initial;
-                border: initial;
+                @include background-content('overlay/cross.png', contain);
+                @include bg-dimention-position(1.5em, 1.5em, relative);
+                @extend %buttonless;
                 margin: 1em 0 0 1em;
             }
         }
@@ -559,10 +416,8 @@ body {
                 display: block;
 
                 a {
+                    @include text(1em, $color-menu, 400);
                     text-decoration: none;
-                    color: $color-menu;
-                    font-size: 1em;
-                    font-weight: 400;
                     opacity: 0.5;
                     padding-left: 3em;
                     display: inline-block;
@@ -579,12 +434,8 @@ body {
                 a {
 
                     &::before {
-                        @include background-content('home.png', contain);
-                        height: 1em;
-                        width: 1em;
-                        top: -1px;
-                        left: 0;
-                        position: absolute;
+                        @include background-content('menu-icon/home.png', contain);
+                        @include bg-dimention-position(1em, 1em, absolute, -1px, $left: 0);
                     }
                 }
             }
@@ -594,12 +445,8 @@ body {
                 a {
 
                     &::before {
-                        @include background-content('video.png', contain);
-                        height: 1em;
-                        width: 1em;
-                        top: 0px;
-                        left: 0;
-                        position: absolute;
+                        @include background-content('menu-icon/video.png', contain);
+                        @include bg-dimention-position(1em, 1em, absolute, 0, $left: 0);
                     }
                 }
             }
@@ -609,12 +456,8 @@ body {
                 a {
 
                     &::before {
-                        @include background-content('plaza.png', contain);
-                        height: 1em;
-                        width: 1em;
-                        top: 1px;
-                        left: 0;
-                        position: absolute;
+                        @include background-content('menu-icon/plaza.png', contain);
+                        @include bg-dimention-position(1em, 1em, absolute, 1px, $left: 0);
                     }
                 }
             }
@@ -624,12 +467,8 @@ body {
                 a {
 
                     &::before {
-                        @include background-content('chat.png', contain);
-                        height: 1em;
-                        width: 1em;
-                        top: 0px;
-                        left: 0;
-                        position: absolute;
+                        @include background-content('menu-icon/chat.png', contain);
+                        @include bg-dimention-position(1em, 1em, absolute, 0, $left: 0);
                     }
                 }
             }
@@ -639,12 +478,8 @@ body {
                 a {
 
                     &::before {
-                        @include background-content('email.png', contain);
-                        height: 1em;
-                        width: 1em;
-                        top: -1px;
-                        left: 0;
-                        position: absolute;
+                        @include background-content('menu-icon/email.png', contain);
+                        @include bg-dimention-position(1em, 1em, absolute, -1px, $left: 0);
                     }
                 }
             }
@@ -652,9 +487,128 @@ body {
     }
 }
 
-.display {
-    display: block;
-    position: absolute;
+.page-wrap-menu {
+    position: fixed;
+    max-width: 800px;
+
+    .page-content {
+        @include page-shrink(14em, -9em, -7em, !important);
+    }
+}
+
+
+/****************************
+	    Topic-Overlay
+****************************/
+
+
+.topic-list {
+    position: relative;
+    z-index: 4;
+    display: none;
+    float: right;;
+
+    .topic-content {
+
+        .cross {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+
+            button {
+                @include background-content('overlay/cross.png', contain);
+                @include bg-dimention-position(1.5em, 1.5em, relative, $right: 0);
+                @extend %buttonless;
+                margin: 1em 1em 0 0;
+                float: right;
+            }
+        }
+
+        .topic-navigation {
+            margin-right: 5em;
+
+            h2 {
+                @include text(1.5em, $color-topic-list, 400);
+                margin: 0;
+                display: inline-block;
+                margin-top: 3.5em;
+            }
+
+            ul {
+                list-style: none;
+                margin: 1.5em 0 0;
+
+                .item + .item {
+                    margin-top: 1em;
+                }
+
+                .item {
+                    @include bg-dimention-position(1em, 1em, relative);
+                    display: block;
+                    position: relative;
+                    right: 1em;
+
+                    a {
+                        @include text(1em, $color-topic-list, 400);
+                        display: inline-block;
+                        text-decoration: none;
+                        opacity: 0.5;
+                        display: inline-block;
+                        padding-left: 2em;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+
+                    &.food {
+
+                        a {
+                            @include background-content('topic-icon/topic-food.png',contain);
+                        }
+                    }
+
+                    &.drink {
+
+                        a {
+                            @include background-content('topic-icon/topic-drink.png',contain);
+                        }
+                    }
+
+                    &.treats {
+
+                        a {
+                            @include background-content('topic-icon/topic-treat.png',contain);
+                        }
+                    }
+
+                    &.tools {
+
+                        a {
+                            @include background-content('topic-icon/topic-tool.png',contain);
+                        }
+                    }
+
+                    &.room {
+
+                        a {
+                            @include background-content('topic-icon/topic-room.png',contain);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page-wrap-topic {
+    position: fixed;
+    max-width: 800px;
+
+    .page-content {
+        @include page-shrink(-14em, -9em, -7em, !important);
+    }
 }
 
 .selected {

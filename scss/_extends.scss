@@ -2,34 +2,38 @@
                         	Mixin
 ************************************************************/
 
-@mixin text($size, $color :null, $text-align :null, $weight :null, $letter-spacing :null, $line-height :null) {
+@mixin text($size, $color :null, $weight :null, $letter-spacing :null, $line-height :null) {
 	font-size: $size;
 	line-height: $line-height;
 	font-weight: $weight;
 	color: $color;
-	text-align: $text-align;
 	letter-spacing: $letter-spacing;
 }
 
-@mixin background-content($icon, $size, $position :null) {
+@mixin background-content($icon, $size, $bg-position :null) {
 	background-image: url('../img/#{$icon}')!important;
 	background-size: $size;
-	background-position: $position;
+	background-position: $bg-position;
 	content: '';
 	z-index: 1;
-	position: relative;
 	background-repeat: no-repeat;
 }
-
-@mixin buttonless($width, $height) {
-	border: none;
-	background-color: transparent;
-	width: $width;
+@mixin bg-dimention-position($width, $height, $position, $top :null, $right :null, $bottom :null, $left :null) {
+	position: $position;
 	height: $height;
-	padding: 0;
+	width: $width;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
 }
 
-
+@mixin page-shrink($x, $y, $z, $important :null) {
+	transform: perspective(20em) translate3d($x, $y, $z);
+	transition: all .5s ease$important;
+	position: relative;
+	box-shadow: 0px 0px 102px 0px #9DC8FC;
+}
 
 
 /***********************************************************
@@ -37,7 +41,11 @@
 ************************************************************/
 
 
-
+%buttonless {
+	background-color: initial;
+	border: none;
+	padding: 0;
+}
 
 
 
@@ -69,3 +77,4 @@ $color-comment                              : $Boulder;
 $color-footer-a                             : $Anakiwa;
 $color-menu									: $East-Bay;
 $color-topic-list							: $East-Bay;
+$color-author-name								: $Anakiwa;

@@ -3,8 +3,6 @@
 ************************************************************/
 
 var file = "file:///Users/philiprurka/Documents/Dev/Sub-Projects/CAF/CAF-Project/pages/";
-var file_index = "file:///Users/philiprurka/Documents/Dev/Sub-Projects/CAF/CAF-Project/";
-
 
 
 
@@ -34,30 +32,35 @@ var file_index = "file:///Users/philiprurka/Documents/Dev/Sub-Projects/CAF/CAF-P
 $('.threeway button').click(function(event) {
     event.preventDefault();
     $('#overlay').addClass('overlay');
-    $('#pre-page').addClass('pre-page-menu');
+    $('#page-wrap').addClass('page-wrap-menu');
 
     setTimeout(function() {
-        $('.menu').fadeIn(500);
+        $('.site-navigation').fadeIn(500);
     }, 500);
 });
 
 $('.cross button').click(function(event) {
     event.preventDefault();
-    $('.menu').fadeOut(500);
+    menu_cross_func();
+});
 
-    setTimeout(function() {
-        $('#overlay').removeClass('overlay');
-        $('#pre-page').removeClass('pre-page-menu');
-    }, 500);
+$('#overlay').click(function(event) {
+    event.preventDefault();
+    menu_cross_func();
+});
+
+$(document).keyup(function(e) {
+     if (e.keyCode == 27) {
+        menu_cross_func();
+    }
 });
 
 
 /***** Topic *****/
-$('.topic a').click(function(event) {
+$('.current-topic button').click(function(event) {
     event.preventDefault();
     $('#overlay').addClass('overlay');
-    $('#pre-page').addClass('pre-page-topic');
-
+    $('#page-wrap').addClass('page-wrap-topic');
     setTimeout(function() {
         $('.topic-list').fadeIn(500);
     }, 500);
@@ -66,68 +69,67 @@ $('.topic a').click(function(event) {
 $('.cross button').click(function(event) {
     event.preventDefault();
     $('.topic-list').fadeOut(500);
-
     setTimeout(function() {
         $('#overlay').removeClass('overlay');
-        $('#pre-page').removeClass('pre-page-topic');
+        $('#page-wrap').removeClass('page-wrap-topic');
     }, 500);
 });
 
-
-$('.topic-container .food').click(function(event) {
+/***** Topic-List *****/
+$('.topic-navigation .food').click(function(event) {
     event.preventDefault();
     $('.topic-list').fadeOut(500);
     setTimeout(function () {
         $('#overlay').removeClass('overlay');
-        $('#pre-page').removeClass('pre-page-topic');
+        $('#page-wrap').removeClass('page-wrap-topic');
     }, 500);
     setTimeout(function () {
-        window.location.href = file_index + "index.html";
+        window.location.href = file + "food.html";
     },1000);
     });
 
-$('.topic-container .drink').click(function(event) {
+$('.topic-navigation .drink').click(function(event) {
     event.preventDefault();
     $('.topic-list').fadeOut(500);
     setTimeout(function () {
         $('#overlay').removeClass('overlay');
-        $('#pre-page').removeClass('pre-page-topic');
+        $('#page-wrap').removeClass('page-wrap-topic');
     }, 500);
     setTimeout(function () {
         window.location.href = file + "drink.html";
     },1000);
 });
 
-$('.topic-container .treats').click(function(event) {
+$('.topic-navigation .treats').click(function(event) {
     event.preventDefault();
     $('.topic-list').fadeOut(500);
     setTimeout(function () {
         $('#overlay').removeClass('overlay');
-        $('#pre-page').removeClass('pre-page-topic');
+        $('#page-wrap').removeClass('page-wrap-topic');
     }, 500);
     setTimeout(function () {
         window.location.href = file + "treat.html";
     },1000);
 });
 
-$('.topic-container .tools').click(function(event) {
+$('.topic-navigation .tools').click(function(event) {
     event.preventDefault();
     $('.topic-list').fadeOut(500);
     setTimeout(function () {
         $('#overlay').removeClass('overlay');
-        $('#pre-page').removeClass('pre-page-topic');
+        $('#page-wrap').removeClass('page-wrap-topic');
     }, 500);
     setTimeout(function () {
         window.location.href = file + "tool.html";
     },1000);
 });
 
-$('.topic-container .room').click(function(event) {
+$('.topic-navigation .room').click(function(event) {
     event.preventDefault();
     $('.topic-list').fadeOut(500);
     setTimeout(function () {
         $('#overlay').removeClass('overlay');
-        $('#pre-page').removeClass('pre-page-topic');
+        $('#page-wrap').removeClass('page-wrap-topic');
     }, 500);
     setTimeout(function () {
         window.location.href = file + "room.html";
@@ -146,7 +148,13 @@ $('.topic-container .room').click(function(event) {
                       Non-Event Function
 ************************************************************/
 
-
+function menu_cross_func() {
+    $('.site-navigation').fadeOut(500);
+    setTimeout(function() {
+        $('#overlay').removeClass('overlay');
+        $('#page-wrap').removeClass('page-wrap-menu');
+    }, 500);
+}
 
 
 /***********************************************************
