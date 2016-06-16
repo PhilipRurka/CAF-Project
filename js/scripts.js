@@ -2,7 +2,7 @@
                          	Var
 ************************************************************/
 
-var file-local = "local:///Users/philiprurka/Documents/Dev/Sub-Projects/CAF/CAF-Project/pages/";
+var file-local = "file:///Users/philiprurka/Documents/Dev/Sub-Projects/CAF/CAF-Project/pages/";
 
 var file-gh = "http://philiprurka.github.io/CAF-Project/pages/";
 
