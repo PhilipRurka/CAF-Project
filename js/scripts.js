@@ -100,7 +100,7 @@ $('.topic-navigation .drink').click(function(event) {
     }, 500);
     setTimeout(function () {
         window.location.href = file_local + "drink.html"
-        window.location.href = file_lgh+ "drink.html";;
+        window.location.href = file_gh+ "drink.html";;
     },1000);
 });
 
@@ -113,7 +113,7 @@ $('.topic-navigation .treats').click(function(event) {
     }, 500);
     setTimeout(function () {
         window.location.href = file_local + "treat.html"
-        window.location.href = file_lgh+ "treat.html";;
+        window.location.href = file_gh+ "treat.html";;
     },1000);
 });
 
