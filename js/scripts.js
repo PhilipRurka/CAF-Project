@@ -156,7 +156,7 @@ function overlay_transition_remove() {
 function change_url(page) {
     setTimeout(function () {
         // window.location.href = file_local + page;
-        window.location.href = file_gh + "food.html";
+        window.location.href = file_gh + page;
     },1500);
 };
 
