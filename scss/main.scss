@@ -17,6 +17,7 @@ body {
         .wrapper {
             max-width: 800px;
             margin: 0 auto;
+            display: none;
         }
     }
 }
@@ -68,31 +69,12 @@ body {
             }
         }
 
-        .current-topic {
+        .search-icon {
 
-            button {
+            .search {
                 @include bg-dimention-position(1.75em, 1.75em, absolute, 2em, 0);
+                @include background-content('navigation-icon/search.png', contain);
                 @extend %buttonless;
-
-                &.food-selected {
-                    @include background-content('topic-icon/food-selected.png',contain);
-                }
-
-                &.drink-selected {
-                    @include background-content('topic-icon/drink-selected.png',contain);
-                }
-
-                &.treat-selected {
-                    @include background-content('topic-icon/treat-selected.png',contain);
-                }
-
-                &.tool-selected {
-                    @include background-content('topic-icon/tool-selected.png',contain);
-                }
-
-                &.room-selected {
-                    @include background-content('topic-icon/room-selected.png',contain);
-                }
             }
         }
 
@@ -101,8 +83,9 @@ body {
             ul {
                 list-style: none;
                 list-style-position: inside;
-                margin: 0;
+                margin: 0 auto;;
                 padding-bottom: 2.5em;
+                max-width: 20em;
 
                 .item {
                     float: left;
@@ -136,18 +119,36 @@ body {
 
                         &.favourites {
                             @include background-content('navigation-icon/favourites.png', contain);
+                            top: -1px;
                         }
 
                         &.camera {
                             @include background-content('navigation-icon/camera.png', contain);
                         }
 
-                        &.search {
-                            @include background-content('navigation-icon/search.png', contain);
-                        }
-
                         &.lounge {
                             @include background-content('navigation-icon/lounge.png', contain);
+                            top: -2px;
+                        }
+
+                        &.food-selected {
+                            @include background-content('topic-icon/food-selected.png',contain);
+                        }
+
+                        &.drink-selected {
+                            @include background-content('topic-icon/drink-selected.png',contain);
+                        }
+
+                        &.treat-selected {
+                            @include background-content('topic-icon/treat-selected.png',contain);
+                        }
+
+                        &.tool-selected {
+                            @include background-content('topic-icon/tool-selected.png',contain);
+                        }
+
+                        &.room-selected {
+                            @include background-content('topic-icon/room-selected.png',contain);
                         }
                     }
                 }
