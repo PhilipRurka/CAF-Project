@@ -199,6 +199,15 @@ body {
                 border-radius: 5px 5px 0 0;
                 max-height: 720px;
 
+                .img {
+
+                    img {
+                        opacity: 0;
+                        width: 0;
+                        height: 0;
+                    }
+                }
+
                 &.food1 {
                     @include background-content('post-image/food1.jpeg', cover, center);
                 }
@@ -577,14 +586,14 @@ body {
                         }
                     }
 
-                    &.treats {
+                    &.treat {
 
                         a {
                             @include background-content('topic-icon/topic-treat.png',contain);
                         }
                     }
 
-                    &.tools {
+                    &.tool {
 
                         a {
                             @include background-content('topic-icon/topic-tool.png',contain);

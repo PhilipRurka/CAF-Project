@@ -51,12 +51,6 @@ $('#overlay').click(function(event) {
     menu_cross_func();
 });
 
-$(document).keyup(function(e) {
-     if (e.keyCode == 27) {
-        menu_cross_func();
-    }
-});
-
 
 /***** Topic *****/
 $('.search-icon button').click(function(event) {
@@ -70,92 +64,48 @@ $('.search-icon button').click(function(event) {
 
 $('.cross button').click(function(event) {
     event.preventDefault();
-    $('.topic-list').fadeOut(500);
-    setTimeout(function() {
-        $('#overlay').removeClass('overlay');
-        $('#page-wrap').removeClass('page-wrap-topic');
-    }, 500);
+    overlay_transition_remove();
 });
 
 /***** Topic-List *****/
 $('.topic-navigation .food').click(function(event) {
+
     event.preventDefault();
-    $('.topic-list').fadeOut(500);
-    setTimeout(function () {
-        $('#overlay').removeClass('overlay');
-        $('#page-wrap').removeClass('page-wrap-topic');
-    }, 500);
-    setTimeout(function () {
-        $('.wrapper').fadeOut(500);
-    }, 1000);
-    setTimeout(function () {
-        // window.location.href = file_local + "food.html";
-        window.location.href = file_gh + "food.html";
-    },1500);
+    overlay_transition_remove();
+    wrapper_fadeOut();
+    change_url('food.html');
     });
 
 $('.topic-navigation .drink').click(function(event) {
+
     event.preventDefault();
-    $('.topic-list').fadeOut(500);
-    setTimeout(function () {
-        $('#overlay').removeClass('overlay');
-        $('#page-wrap').removeClass('page-wrap-topic');
-    }, 500);
-    setTimeout(function () {
-        $('.wrapper').fadeOut(500);
-    }, 1000);
-    setTimeout(function () {
-        // window.location.href = file_local + "drink.html"
-        window.location.href = file_gh+ "drink.html";
-    },1500);
+    overlay_transition_remove();
+    wrapper_fadeOut();
+    change_url('drink.html');
 });
 
-$('.topic-navigation .treats').click(function(event) {
+$('.topic-navigation .treat').click(function(event) {
+
     event.preventDefault();
-    $('.topic-list').fadeOut(500);
-    setTimeout(function () {
-        $('#overlay').removeClass('overlay');
-        $('#page-wrap').removeClass('page-wrap-topic');
-    }, 500);
-    setTimeout(function () {
-        $('.wrapper').fadeOut(500);
-    }, 1000);
-    setTimeout(function () {
-        // window.location.href = file_local + "treat.html"
-        window.location.href = file_gh+ "treat.html";
-    },1500);
+    overlay_transition_remove();
+    wrapper_fadeOut();
+    change_url('treat.html');
 });
 
-$('.topic-navigation .tools').click(function(event) {
+$('.topic-navigation .tool').click(function(event) {
+
     event.preventDefault();
-    $('.topic-list').fadeOut(500);
-    setTimeout(function () {
-        $('#overlay').removeClass('overlay');
-        $('#page-wrap').removeClass('page-wrap-topic');
-    }, 500);
-    setTimeout(function () {
-        $('.wrapper').fadeOut(500);
-    }, 1000);
-    setTimeout(function () {
-        // window.location.href = file_local + "tool.html";
-        window.location.href = file_gh + "tool.html";
-    },1500);
+    overlay_transition_remove();
+    wrapper_fadeOut();
+    change_url("tool.html");
 });
 
 $('.topic-navigation .room').click(function(event) {
+
     event.preventDefault();
-    $('.topic-list').fadeOut(500);
-    setTimeout(function () {
-        $('#overlay').removeClass('overlay');
-        $('#page-wrap').removeClass('page-wrap-topic');
-    }, 500);
-    setTimeout(function () {
-        $('.wrapper').fadeOut(500);
-    }, 1000);
-    setTimeout(function () {
-        // window.location.href = file_local + "room.html";
-        window.location.href = file_gh + "room.html";
-    },1500);
+    overlay_transition_remove();
+    wrapper_fadeOut();
+    change_url("room.html");
 });
 
 /*****************
@@ -163,23 +113,53 @@ $('.topic-navigation .room').click(function(event) {
 *****************/
 
 
-
+$(document).keyup(function(e) {
+     if (e.keyCode == 27) {
+        menu_cross_func();
+    }
+});
 
 
 /***********************************************************
                       Non-Event Function
 ************************************************************/
 
+
 function menu_cross_func() {
     $('.site-navigation').fadeOut(500);
+    $('.topic-list').fadeOut(500);
     setTimeout(function() {
         $('#overlay').removeClass('overlay');
         $('#page-wrap').removeClass('page-wrap-menu');
+        $('#page-wrap').removeClass('page-wrap-topic');
     }, 500);
 }
+
 function load_fadeIn() {
     $('.wrapper').fadeIn(500);
 }
+
+function wrapper_fadeOut() {
+    setTimeout(function () {
+        $('.wrapper').fadeOut(500);
+    }, 1000);
+};
+
+function overlay_transition_remove() {
+    $('.topic-list').fadeOut(500);
+    setTimeout(function () {
+        $('#overlay').removeClass('overlay');
+        $('#page-wrap').removeClass('page-wrap-topic');
+    }, 500);
+};
+
+function change_url(page) {
+    setTimeout(function () {
+        // window.location.href = file_local + page;
+        window.location.href = file_gh + "food.html";
+    },1500);
+};
+
 
 /***********************************************************
                        	   Test
