@@ -24,6 +24,9 @@ body {
     }
 }
 
+#page-wrap {
+    width: 100%;
+}
 .page-content {
     @include page-shrink(0, 0, 0);
     box-shadow: none;
