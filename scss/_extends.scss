@@ -31,7 +31,6 @@
 @mixin page-shrink($x, $y, $z, $important :null) {
 	transform: perspective(20em) translate3d($x, $y, $z);
 	transition: all .5s ease$important;
-	position: relative;
 	box-shadow: 0px 0px 102px 0px #9DC8FC;
 }
 
