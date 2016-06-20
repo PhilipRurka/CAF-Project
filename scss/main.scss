@@ -412,15 +412,15 @@ body {
     display: none;
 
     .site-menu {
-        margin-top: 1em;
 
         .cross {
             width: 100%;
             height: 100%;
+			margin: 1em 0 0 1em;
 
             button {
                 @include background-content('overlay/cross.png', contain);
-                @include bg-dimention-position(1.5em, 1.5em, relative);
+                @include bg-dimention-position(1.5em, 1.5em, relative, $left: 0);
                 @extend %buttonless;
                 margin: 1em 0 0 1em;
                 float: left;
@@ -430,17 +430,15 @@ body {
         ul {
             list-style: none;
             margin: 0 0 0 3em;
-            padding-top: 6em;
 
             .item + .item {
                 margin-top: 1em;
             }
 
             .item {
-                display: block;
-				position: relative;
-				right: 1em;
                 @include bg-dimention-position(1em, 1em, relative);
+                display: block;
+				right: 1em;
 
                 a {
                     @include text(1em, $color-menu, 400);
@@ -553,7 +551,6 @@ body {
                 .item {
                     @include bg-dimention-position(1em, 1em, relative);
                     display: block;
-                    position: relative;
                     right: 1em;
 
                     a {
