@@ -165,8 +165,8 @@ function wrapperFadeOutFunc() {
 
 function changeUrlFunc(page) {
     setTimeout(function () {
-        // window.location.href = fileLocal + page;
-        window.location.href = fileGh + page;
+        window.location.href = fileLocal + page;
+        // window.location.href = fileGh + page;
     },1500);
 };
 
