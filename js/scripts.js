@@ -2,9 +2,9 @@
                          	Var
 ************************************************************/
 
-var file_local = "file:///Users/philiprurka/Documents/Dev/Sub-Projects/CAF/CAF-Project/pages/";
+var fileLocal = "file:///Users/philiprurka/Documents/Dev/Sub-Projects/CAF/CAF-Project/pages/";
 
-var file_gh = "http://philiprurka.github.io/CAF-Project/pages/";
+var fileGh = "http://philiprurka.github.io/CAF-Project/pages/";
 
 
 
@@ -20,7 +20,7 @@ var file_gh = "http://philiprurka.github.io/CAF-Project/pages/";
                        Event Function
 ************************************************************/
 
-load_fadeIn();
+
 
 
 
@@ -28,6 +28,14 @@ load_fadeIn();
 /*****************
       Mouse
 *****************/
+
+/***** Outline Hack part 1/2 *****/
+$('button').each(function() {
+	$(this).click(function(event) {
+		$('#outline a').focus();
+	});
+});
+/***** Outline Hack part 1/2 *****/
 
 
 /***** Menu *****/
@@ -43,12 +51,12 @@ $('.threeway button').click(function(event) {
 
 $('.cross button').click(function(event) {
     event.preventDefault();
-    menu_cross_func();
+    menuCrossFunc();
 });
 
 $('#overlay').click(function(event) {
     event.preventDefault();
-    menu_cross_func();
+    menuCrossFunc()
 });
 
 
@@ -64,48 +72,48 @@ $('.search-icon button').click(function(event) {
 
 $('.cross button').click(function(event) {
     event.preventDefault();
-    overlay_transition_remove();
+    overlayTransitionRemoveFunc();
 });
 
 /***** Topic-List *****/
 $('.topic-navigation .food').click(function(event) {
 
     event.preventDefault();
-    overlay_transition_remove();
-    wrapper_fadeOut();
-    change_url('food.html');
+    overlayTransitionRemoveFunc();
+    wrapperFadeOutFunc();
+    changeUrlFunc('food.html');
     });
 
 $('.topic-navigation .drink').click(function(event) {
 
     event.preventDefault();
-    overlay_transition_remove();
-    wrapper_fadeOut();
-    change_url('drink.html');
+    overlayTransitionRemoveFunc();
+    wrapperFadeOutFunc();
+    changeUrlFunc('drink.html');
 });
 
 $('.topic-navigation .treat').click(function(event) {
 
     event.preventDefault();
-    overlay_transition_remove();
-    wrapper_fadeOut();
-    change_url('treat.html');
+    overlayTransitionRemoveFunc();
+    wrapperFadeOutFunc();
+    changeUrlFunc('treat.html');
 });
 
 $('.topic-navigation .tool').click(function(event) {
 
     event.preventDefault();
-    overlay_transition_remove();
-    wrapper_fadeOut();
-    change_url("tool.html");
+    overlayTransitionRemoveFunc();
+    wrapperFadeOutFunc();
+    changeUrlFunc("tool.html");
 });
 
 $('.topic-navigation .room').click(function(event) {
 
     event.preventDefault();
-    overlay_transition_remove();
-    wrapper_fadeOut();
-    change_url("room.html");
+    overlayTransitionRemoveFunc();
+    wrapperFadeOutFunc();
+    changeUrlFunc("room.html");
 });
 
 /*****************
@@ -113,9 +121,9 @@ $('.topic-navigation .room').click(function(event) {
 *****************/
 
 
-$(document).keyup(function(e) {
-     if (e.keyCode == 27) {
-        menu_cross_func();
+$(document).keyup(function(event) {
+     if (event.keyCode == 27) {
+        menuCrossFunc();
     }
 });
 
@@ -124,8 +132,15 @@ $(document).keyup(function(e) {
                       Non-Event Function
 ************************************************************/
 
+loadFadeInFunc();
 
-function menu_cross_func() {
+/***** Outline Hack part 2/2 *****/
+$('a, button').each(function(){
+	$(this).addClass('outline-hover');
+});
+/***** Outline Hack part 2/2 *****/
+
+function menuCrossFunc() {
     $('.site-navigation').fadeOut(500);
     $('.topic-list').fadeOut(500);
     setTimeout(function() {
@@ -135,17 +150,17 @@ function menu_cross_func() {
     }, 500);
 }
 
-function load_fadeIn() {
+function loadFadeInFunc() {
     $('.wrapper').fadeIn(500);
 }
 
-function wrapper_fadeOut() {
+function wrapperFadeOutFunc() {
     setTimeout(function () {
         $('.wrapper').fadeOut(500);
     }, 1000);
 };
 
-function overlay_transition_remove() {
+function overlayTransitionRemoveFunc() {
     $('.topic-list').fadeOut(500);
     setTimeout(function () {
         $('#overlay').removeClass('overlay');
@@ -153,10 +168,10 @@ function overlay_transition_remove() {
     }, 500);
 };
 
-function change_url(page) {
+function changeUrlFunc(page) {
     setTimeout(function () {
-        // window.location.href = file_local + page;
-        window.location.href = file_gh + page;
+        // window.location.href = fileLocal + page;
+        window.location.href = fileGh + page;
     },1500);
 };
 
