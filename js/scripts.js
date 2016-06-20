@@ -141,7 +141,7 @@ function menuCrossFunc() {
         $('#overlay').removeClass('overlay');
         $('#page-wrap').removeClass('page-wrap-menu');
         $('#page-wrap').removeClass('page-wrap-topic')
-        window.scroll(0,0);
+        window.scrollto(0,0);
     }, 500);
 }
 
