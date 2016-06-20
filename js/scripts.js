@@ -134,6 +134,14 @@ $('a, button').each(function(){
 });
 /***** Outline Hack part 2/2 *****/
 
+function overlayTransitionRemoveFunc() {
+    $('.topic-list').fadeOut(500);
+    setTimeout(function () {
+        $('#overlay').removeClass('overlay');
+        $('#page-wrap').removeClass('page-wrap-topic');
+    }, 500);
+};
+
 function menuCrossFunc() {
     $('.site-navigation').fadeOut(500);
     $('.topic-list').fadeOut(500);
@@ -141,7 +149,7 @@ function menuCrossFunc() {
         $('#overlay').removeClass('overlay');
         $('#page-wrap').removeClass('page-wrap-menu');
         $('#page-wrap').removeClass('page-wrap-topic')
-        window.scrollto(0,0);
+        // window.scrollto(0,0);
     }, 500);
 }
 
