@@ -423,6 +423,7 @@ body {
                 @include bg-dimention-position(1.5em, 1.5em, relative);
                 @extend %buttonless;
                 margin: 1em 0 0 1em;
+                float: left;
             }
         }
 
@@ -437,6 +438,9 @@ body {
 
             .item {
                 display: block;
+				position: relative;
+				right: 1em;
+                @include bg-dimention-position(1em, 1em, relative);
 
                 a {
                     @include text(1em, $color-menu, 400);
@@ -444,68 +448,47 @@ body {
                     opacity: 0.5;
                     padding-left: 3em;
                     display: inline-block;
-                    position: relative;
 
                     &:hover {
                         opacity: 1;
                     }
                 }
-            }
 
-            .home {
+	            &.home {
 
-                a {
-
-                    &::before {
+	                a {
                         @include background-content('menu-icon/home.png', contain);
-                        @include bg-dimention-position(1em, 1em, absolute, -1px, $left: 0);
-                    }
-                }
-            }
+	                }
+	            }
 
-            .video {
+	            &.video {
 
-                a {
-
-                    &::before {
+	                a {
                         @include background-content('menu-icon/video.png', contain);
-                        @include bg-dimention-position(1em, 1em, absolute, 0, $left: 0);
-                    }
-                }
-            }
+	                }
+	            }
 
-            .plaza {
+	            &.plaza {
 
-                a {
-
-                    &::before {
+	                a {
                         @include background-content('menu-icon/plaza.png', contain);
-                        @include bg-dimention-position(1em, 1em, absolute, 1px, $left: 0);
-                    }
-                }
-            }
+	                }
+	            }
 
-            .chat {
+	            &.chat {
 
-                a {
-
-                    &::before {
+	                a {
                         @include background-content('menu-icon/chat.png', contain);
-                        @include bg-dimention-position(1em, 1em, absolute, 0, $left: 0);
-                    }
-                }
-            }
+	                }
+	            }
 
-            .email {
+	            &.email {
 
-                a {
-
-                    &::before {
+	                a {
                         @include background-content('menu-icon/email.png', contain);
-                        @include bg-dimention-position(1em, 1em, absolute, -1px, $left: 0);
-                    }
-                }
-            }
+	                }
+	            }
+			}
         }
     }
 }
@@ -578,7 +561,6 @@ body {
                         display: inline-block;
                         text-decoration: none;
                         opacity: 0.5;
-                        display: inline-block;
                         padding-left: 2em;
 
                         &:hover {
