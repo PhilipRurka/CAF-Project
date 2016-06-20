@@ -506,7 +506,7 @@ body {
     width: 100%;
 
     .page-content {
-        @include page-shrink(14em, -9em, -7em, !important);
+        @include page-shrink(14em, -6em, -7em, !important);
     }
 }
 
@@ -622,7 +622,7 @@ body {
     width: 100%;
 
     .page-content {
-        @include page-shrink(-14em, -9em, -7em, !important);
+        @include page-shrink(-14em, -6em, -7em, !important);
     }
 }
 

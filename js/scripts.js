@@ -37,6 +37,10 @@ $('button').each(function() {
 });
 /***** Outline Hack part 1/2 *****/
 
+$('.cross button').click(function(event) {
+    event.preventDefault();
+    menuCrossFunc();
+});
 
 /***** Menu *****/
 $('.threeway button').click(function(event) {
@@ -47,11 +51,6 @@ $('.threeway button').click(function(event) {
     setTimeout(function() {
         $('.site-navigation').fadeIn(500);
     }, 500);
-});
-
-$('.cross button').click(function(event) {
-    event.preventDefault();
-    menuCrossFunc();
 });
 
 $('#overlay').click(function(event) {
@@ -68,11 +67,6 @@ $('.search-icon button').click(function(event) {
     setTimeout(function() {
         $('.topic-list').fadeIn(500);
     }, 500);
-});
-
-$('.cross button').click(function(event) {
-    event.preventDefault();
-    overlayTransitionRemoveFunc();
 });
 
 /***** Topic-List *****/
@@ -146,7 +140,8 @@ function menuCrossFunc() {
     setTimeout(function() {
         $('#overlay').removeClass('overlay');
         $('#page-wrap').removeClass('page-wrap-menu');
-        $('#page-wrap').removeClass('page-wrap-topic');
+        $('#page-wrap').removeClass('page-wrap-topic')
+        window.scroll(0,0);
     }, 500);
 }
 
@@ -160,18 +155,10 @@ function wrapperFadeOutFunc() {
     }, 1000);
 };
 
-function overlayTransitionRemoveFunc() {
-    $('.topic-list').fadeOut(500);
-    setTimeout(function () {
-        $('#overlay').removeClass('overlay');
-        $('#page-wrap').removeClass('page-wrap-topic');
-    }, 500);
-};
-
 function changeUrlFunc(page) {
     setTimeout(function () {
-        // window.location.href = fileLocal + page;
-        window.location.href = fileGh + page;
+        window.location.href = fileLocal + page;
+        // window.location.href = fileGh + page;
     },1500);
 };
 
