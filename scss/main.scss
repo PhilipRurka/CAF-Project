@@ -73,7 +73,7 @@ body {
         .threeway {
 
             button {
-                @include background-content('overlay/threeway.png', contain);
+                @include background-content('overlay/threeway.svg', contain);
                 @include bg-dimention-position(1.75em, 1.75em, absolute, 2em, $left: 0);
                 @extend %buttonless;
             }
@@ -83,7 +83,7 @@ body {
 
             .search {
                 @include bg-dimention-position(1.75em, 1.75em, absolute, 2em, 0);
-                @include background-content('navigation-icon/search.png', contain);
+                @include background-content('navigation-icon/search.svg', contain);
                 @extend %buttonless;
             }
         }
@@ -129,16 +129,16 @@ body {
                         }
 
                         &.favourites {
-                            @include background-content('navigation-icon/favourites.png', contain);
+                            @include background-content('navigation-icon/favourites.svg', contain);
                             top: -1px;
                         }
 
                         &.camera {
-                            @include background-content('navigation-icon/camera.png', contain);
+                            @include background-content('navigation-icon/camera.svg', contain);
                         }
 
                         &.lounge {
-                            @include background-content('navigation-icon/lounge.png', contain);
+                            @include background-content('navigation-icon/lounge.svg', contain);
                             top: -2px;
                         }
 
@@ -349,7 +349,7 @@ body {
                         a {
 
                             &:before {
-                                @include background-content('post-footer/thumbs.png',contain);
+                                @include background-content('post-footer/thumb.svg',contain);
                                 @include bg-dimention-position(0.9em, 0.9em, absolute, 0, $left: 0);
                             }
                         }
@@ -360,7 +360,7 @@ body {
                         a {
 
                             &:before {
-                                @include background-content('post-footer/bubble.png',contain);
+                                @include background-content('post-footer/bubble.svg',contain);
                                 @include bg-dimention-position(0.9em, 0.9em, absolute, 0, $left: 0);
                             }
                         }
@@ -419,7 +419,7 @@ body {
 			margin: 1em 0 0 1em;
 
             button {
-                @include background-content('overlay/cross.png', contain);
+                @include background-content('overlay/cross.svg', contain);
                 @include bg-dimention-position(1.5em, 1.5em, relative, $left: 0);
                 @extend %buttonless;
                 margin: 1em 0 0 1em;
@@ -430,6 +430,7 @@ body {
         ul {
             list-style: none;
             margin: 0 0 0 3em;
+            padding: 5.5em 0px 0 3em;
 
             .item + .item {
                 margin-top: 1em;
@@ -455,35 +456,35 @@ body {
 	            &.home {
 
 	                a {
-                        @include background-content('menu-icon/home.png', contain);
+                        @include background-content('menu-icon/home.svg', contain);
 	                }
 	            }
 
 	            &.video {
 
 	                a {
-                        @include background-content('menu-icon/video.png', contain);
+                        @include background-content('menu-icon/video.svg', contain);
 	                }
 	            }
 
 	            &.plaza {
 
 	                a {
-                        @include background-content('menu-icon/plaza.png', contain);
+                        @include background-content('menu-icon/plaza.svg', contain);
 	                }
 	            }
 
 	            &.chat {
 
 	                a {
-                        @include background-content('menu-icon/chat.png', contain);
+                        @include background-content('menu-icon/chat.svg', contain);
 	                }
 	            }
 
 	            &.email {
 
 	                a {
-                        @include background-content('menu-icon/email.png', contain);
+                        @include background-content('menu-icon/email.svg', contain);
 	                }
 	            }
 			}
@@ -522,7 +523,7 @@ body {
             margin: 1em 1em 0 0;
 
             button {
-                @include background-content('overlay/cross.png', contain);
+                @include background-content('overlay/cross.svg', contain);
                 @include bg-dimention-position(1.5em, 1.5em, relative, $right: 0);
                 @extend %buttonless;
                 margin: 1em 1em 0 0;
