@@ -148,7 +148,7 @@ function menuCrossFunc() {
     setTimeout(function() {
         $('#overlay').removeClass('overlay');
         $('#page-wrap').removeClass('page-wrap-menu');
-        $('#page-wrap').removeClass('page-wrap-topic')
+        $('#page-wrap').removeClass('page-wrap-topic');
         // window.scrollto(0,0);
     }, 500);
 }
