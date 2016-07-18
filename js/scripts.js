@@ -75,7 +75,7 @@ $('.topic-navigation .food').click(function(event) {
     event.preventDefault();
     overlayTransitionRemoveFunc();
     wrapperFadeOutFunc();
-    changeUrlFunc('food.html');
+    changeUrlFunc('../food.html');
     });
 
 $('.topic-navigation .drink').click(function(event) {
